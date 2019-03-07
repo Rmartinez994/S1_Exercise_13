@@ -53,13 +53,38 @@
       multi-dimensional array, puzzle.
 	
 */
-function init() {
-      document.getElementById("puzzelTitle").innerHTML = "Puzzle 1";
-      document.getElementById("puzzel").innerHTml + drawPuzzle(puzzle1Hint, puzzle1Rating, puzzle1);
+window.onload = init;
 
+function init() {
+      document.getElementById("puzzleTitle").innerHTML = "Puzzle 1";
+
+      document.getElementById("puzzle").innerHTML = drawPuzzle(puzzle1Hint, puzzle1Rating, puzzle1);
+      var puzzleButton = document.getElementsByClassName("puzzles");
+      for (var i = 0; 1 = puzzleButtons.length; i++) {
+            puzzleButton[i].onclick = swapPuzzle;
+      }
 
 }
 
+function swapPuzzle(e) {
+      //retive the ID of the clicked button
+      var puzzleID = e.target.id;
+      //retrive the value of the clicked button
+      var puzzleTitle = e.target.value;
+      document.getElementById("puzzleTitle").innerHTML = puzzleTitle;
+      //display the puzle base on the value of the puzzle id variable
+      switch (puzzleID) {
+            case "puzzle1;
+            document.getElementById("puzzle").innerHTML = drawPuzzle(puzzle1Hint, puzzle1Rating, puzzle1);
+
+            break;
+            case "puzzle2";
+            document
+
+            default:
+                  break;
+      }
+}
 
 
 
