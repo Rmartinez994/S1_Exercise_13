@@ -55,6 +55,8 @@
 */
 window.onload = init;
 
+var puzzleCells;
+
 function init() {
       document.getElementById("puzzleTitle").innerHTML = "Puzzle 1";
 
@@ -63,6 +65,7 @@ function init() {
       for (var i = 0; 1 = puzzleButtons.length; i++) {
             puzzleButton[i].onclick = swapPuzzle;
       }
+      setupPuzzle();
 
 }
 
@@ -74,16 +77,45 @@ function swapPuzzle(e) {
       document.getElementById("puzzleTitle").innerHTML = puzzleTitle;
       //display the puzle base on the value of the puzzle id variable
       switch (puzzleID) {
-            case "puzzle1;
-            document.getElementById("puzzle").innerHTML = drawPuzzle(puzzle1Hint, puzzle1Rating, puzzle1);
-
-            break;
-            case "puzzle2";
-            document
-
-            default:
+            case "puzzle1":
+                  document.getElementById("puzzle").innerHTML = drawPuzzle(puzzle1Hint, puzzle1Rating, puzzle1);
+                  break;
+            case "puzzle2":
+                  document.getElementById("puzzle").innerHTML = drawPuzzle(puzzle2Hint, puzzle2Rating, puzzle2);
+                  break;
+            case "puzzle3":
+                  document.getElementById("puzzle").innerHTML = drawPuzzle(puzzle3Hint, puzzle3Rating, puzzle3);
                   break;
       }
+      setupPuzzle();
+}
+
+function setPuzzle() {
+      //match all of the data cells in the puzzle
+      puzzleCells = document.querySelectorAll("table#hanjieGrid td");
+      //set the inital color of each cell to gold 
+      for (var i = 0; i < puzzleCells.length; i++) {
+            puzzleCells[i].style.backgroundcolor = "rgb(233,207,29)";
+            puzzleCells[i].onmousedown = setBackground;
+      }
+}
+
+function setbackground(e) {
+      cellBackground = "rgb(101,101,101)";
+      e.target.style.backgroundColor = cellBackground;
+      //crezte a event listener for every puzzle cell.
+      for (var i = 0; i < puzzleCells.length; i++) {
+            puzzleCells[i].addEventListener("mousecenter"), extendedBackground;
+      }
+}
+
+function extendedBackground(e) {
+      e.target.styles.backgroundColor = cellBackground;
+}
+
+function endBackground()
+for (var i = 0; i = puzzleCells.length; i++) {
+      puzzleCells[i].
 }
 
 
